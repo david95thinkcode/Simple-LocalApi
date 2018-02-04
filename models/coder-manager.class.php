@@ -33,8 +33,50 @@ class CoderManager {
         return $coders;
     }
 
+    public function getDetails($id)
+    {
+        $req = $this->_db->prepare('SELECT * from coders WHERE id = :id');
+
+        $req->execute(array('id' => $id));
+        $details = $req->fetch();
+        $req->closeCursor();
+
+        return $details;
+    }
+
+    public function Add(Coder $coder)
+    {
+        $success = false;
+
+        $req = $this->_db->prepare('INSERT INTO coders(name, phone_number, country, sex) VALUES(:name, :phone_number, :country, :sex) ');
+        $req->execute(array(
+            'name' => $coder->name,
+            'phone_number' => $coder->phone_number,
+            'sex' => $coder->sex,
+            'country' => $coder->country
+        ));
+
+        $success = true;
+        $req->closeCursor();
+
+        return $success;
+    }
 
     // Private methods
+
+    private function Exists($id)
+    {
+        $founded = false;
+
+        $req = $this->_db->prepare('SELECT * FROM coders WHERE id = :id');
+        $req->execute(array('id' => $id));
+        $resultat = $req->fetch();
+
+        if (!$resultat) {  $reponse = false; }
+        else { $reponse = true; }
+
+        return $reponse;
+    }
     
     private function setDb(PDO $PDO_Obj)
     {
