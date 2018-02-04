@@ -21,8 +21,9 @@ Just make sure you have a local web server running on your computer
 - From your web browser, past the following url [http://localhost/phpmyadmin](http://localhost/phpmyadmin)  and go to it
 - From phpmyadmin dashboard, import the file **`db.sql`** which is inside **`Database`** folder. More details about **_`db.sql`_** [here](Database/README.md)
 
-- Return to your web browser and past the following url in the search bar [http://localhost/local-api/coders.php](http://localhost/local-api/coders.php)
-- If you get something like [this](screenshots/simple.png) or [this](screenshots/with-json-viewer.png), it's fine ! 
+- Return to your web browser and past the following url in the search bar [http://localhost/local-api](http://localhost/local-api)
+
+After click on the first button, if you get something like [this](screenshots/simple.png) or [this](screenshots/with-json-viewer.png), it's fine ! The second button should show other datas.
 
 ## PS 
 I'm using Ubuntu and my local webserver folder is `/var/www/html`. On Windows, I think it's `C:\wamp\www` if you're using Wamp.
