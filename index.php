@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <title></title>
         <meta charset="UTF-8">
@@ -14,7 +14,7 @@
                     <h2> Hi coders ! </h2>
                     <p>I'm using PHP to create and return few datas that Ionic app will use.</p>
                     <p class="alert alert-info">
-                        Every app built with web front-end framework like Angular, Reat, etc can use it because it returns JSON datas.
+                        Every app built with web front-end framework like Angular, React, etc can use it because it returns JSON datas.
                     </p>
                     <br>
                     <p> <a href="coders.php" class="btn btn-primary">Show me all returned datas</a></p>  
