@@ -12,9 +12,6 @@
     $b->Hydrate(2, 'Majin BOO', +11111111, 'M', 'Earth');
     $c->Hydrate(3, 'Hinata HYUGA', +256558565, 'W', 'Konoha');
     
-    $tab = [$a, $b, $c];
-    
-    $response = new stdClass(); // this is how we create simple class in php
-    $response = $tab;    
-    
-    echo json_encode($response);
+    $tab = [$a, $b, $c];  
+
+    echo json_encode($tab);

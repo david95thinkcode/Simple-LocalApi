@@ -1,11 +1,11 @@
-<?php 
+<?php
 
 class Coder {
     public $id;
     public $name;
     public $phone_number;
     public $country;
-    public $sex;    
+    public $sex;
 
     public function __construct() {}
 

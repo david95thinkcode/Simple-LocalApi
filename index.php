@@ -8,16 +8,20 @@
         <title>Home</title>
     </head>
     <body class='container'>
-    <div class="row jumbotron">
-    <div class="col-sm-4">
-        <h2> Hi coders ! </h2>
-        I'm using PHP to create and return few data that Ionic app will use.
-    </div>
-        <div class="col-sm-4"> 
-            <a href="coders.php" class="btn btn-primary">Show me all returned data</a>
-        </div>
-        <div class="col-sm-4"></div>
-    </div>
+        <div class="row">
+            <div class="offset-sm-4 col-sm-4 jumbotron">
+                <div class="text-center">
+                    <h2> Hi coders ! </h2>
+                    <p>I'm using PHP to create and return few datas that Ionic app will use.</p>
+                    <p class="alert alert-info">
+                        Every app built with web front-end framework like Angular, Reat, etc can use it because it returns JSON datas.
+                    </p>
+                    <br>
+                    <p> <a href="coders.php" class="btn btn-primary">Show me all returned datas</a></p>  
+                    <p> <a href="queries/list.php" class="btn btn-success">Show me all returned datas from DB</a> </p>
+                    
+                </div>
+            </div>
 
     </body>
 </html>
