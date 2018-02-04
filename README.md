@@ -16,7 +16,7 @@ Just make sure you have a local web server running on your computer
 
 ## How to run it ?
 - Download this repository
-- Create a folder and rename it '**`local-api`**' inside your local webserver folder
+- Create a folder and rename it **`local-api`** inside your local webserver folder
 - Move all files and folders from the downloaded repository to **`locap-api`** folder created previously
 - From your web browser, past the following url [http://localhost/phpmyadmin](http://localhost/phpmyadmin)  and go to it
 - From phpmyadmin dashboard, import the file **`db.sql`** which is inside **`Database`** folder. More details about **_`db.sql`_** [here](Database/README.md)
@@ -26,7 +26,8 @@ Just make sure you have a local web server running on your computer
 After click on the first button, if you get something like [this](screenshots/simple.png) or [this](screenshots/with-json-viewer.png), it's fine ! The second button should show other datas.
 
 ## PS 
-I'm using Ubuntu and my local webserver folder is `/var/www/html`. On Windows, I think it's `C:\wamp\www` if you're using Wamp.
+- I'm using Ubuntu and my local webserver folder is `/var/www/html`. On Windows, I think it's `C:\wamp\www` if you're using Wamp.
 If you're using something else like **_laragon_**, read it's official doc.
+- Change credentials in the file `shared/connexion.php` with yours to access your database.
 
 ## [PART 2 : Get datas from Ionic App](https://github.com/david95thinkcode/Simple-Ionic-UseLocalApi)
