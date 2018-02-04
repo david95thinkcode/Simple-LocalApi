@@ -17,8 +17,8 @@
                         Every app built with web front-end framework like Angular, React, etc can use it because it returns JSON datas.
                     </p>
                     <br>
-                    <p> <a href="coders.php" class="btn btn-primary">Show me all returned datas</a></p>  
-                    <p> <a href="queries/list.php" class="btn btn-success">Show me all returned datas from DB</a> </p>
+                    <p> <a href="coders.php" class="btn btn-primary">Show me datas from PHP script</a></p>  
+                    <p> <a href="queries/list.php" class="btn btn-success">Show me all datas from DB</a> </p>
                     
                 </div>
             </div>
