@@ -40,7 +40,7 @@ CREATE TABLE `coders` (
 
 LOCK TABLES `coders` WRITE;
 /*!40000 ALTER TABLE `coders` DISABLE KEYS */;
-INSERT INTO `coders` VALUES (1,'Gai MAÎTO','+2569684','Konoha','M'),(2,'Rob STARK','+00000002','Suna','M');
+INSERT INTO `coders` VALUES (1,'Gai MAITO','+2569684','Konoha','M'),(2,'Rob STARK','+00000002','Suna','M');
 /*!40000 ALTER TABLE `coders` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
