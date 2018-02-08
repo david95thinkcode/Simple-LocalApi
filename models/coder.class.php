@@ -16,5 +16,12 @@ class Coder {
         $this->country = $country;
         $this->sex = $sex;
     }
+    
+    public function HydrateWithoutId($name, $phone, $sex, $country) {
+        $this->name = $name;
+        $this->phone_number = $phone;
+        $this->country = $country;
+        $this->sex = $sex;
+    }
 
 }
