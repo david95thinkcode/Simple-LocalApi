@@ -1,28 +1,12 @@
 <?php
-
-/**
- * REPRESENTS THE OBJECT USED TO RETURN RESPONSE FROM API SCRIPTS
- */
-class XHRResponse
-{
-    public $_message;
-    public $_data;
-
-    function ReturnFailure()
+    /**
+     * REPRESENTS THE OBJECT USED TO RETURN RESPONSE FROM API SCRIPTS
+     */
+    class XHRResponse
     {
-        $t = new stdClass();
-        $t->data = null;
-        $t->message = "FAILURE";
-
-        echo (json_encode($t));
+        public $_success;
+        public $_data;
+        public $_message;
+        
+        public function __construct() {}
     }
-
-    function ReturnSuccess($data)
-    {
-        $t = new stdClass();
-        $t->data = $data;
-        $t->message = "SUCCESS";
-
-        echo (json_encode($t));
-    }
-}

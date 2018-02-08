@@ -2,6 +2,7 @@
 
   // Required files
 
-  require_once 'connexion.php';
-  require_once '../models/coder.class.php';
-  require_once '../models/coder-manager.class.php';
+  include 'connexion.php';
+  include '../models/coder.class.php';
+  include '../models/xhr-response.class.php';
+  include '../models/coder-manager.class.php';

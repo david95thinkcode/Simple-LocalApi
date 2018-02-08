@@ -9,6 +9,9 @@ class CoderManager {
         $this->setDb($PDO_Obj);
     }
 
+    /** Used to retrieve all coders from database
+     * @return Array of Coder
+     */
     public function List()
     {
         $req = $this->_db->query('SELECT * from coders');
@@ -44,6 +47,10 @@ class CoderManager {
         return $details;
     }
 
+    /**
+     * This method is used to insert specified Coder into database
+     * @return true if success / false else
+     */
     public function Add(Coder $coder)
     {
         $success = false;
@@ -60,6 +67,16 @@ class CoderManager {
         $req->closeCursor();
 
         return $success;
+    }
+
+    public function Delete($id) 
+    {
+        $req = $this->_db->prepare('DELETE FROM coders WHERE id = :id');
+        $req->execute(array('id' => $id));
+        
+        $req->closeCursor();
+
+        return TRUE;
     }
 
     // Private methods
