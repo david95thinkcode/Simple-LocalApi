@@ -1,33 +1,47 @@
 <?php
-require_once '../shared/required.php';
 
-$querystate = new XHRResponse();
-$coder = new Coder();
-$coderManager = new CoderManager($bdd);
+  header("Content-Type: application/json; charset=UTF-8");
+  header('Access-Control-Allow-Origin: *');
 
-//Extraction
-$response = json_decode(stripslashes(file_get_contents("php://input")));
+  require '../shared/required.php';
 
-if ($response != NULL) {
-  $name = $response->name;
-  $sex = $response->sex;
-  $country = $response->country;
-  $phone_number = $response->phone_number;
+  $coder = new Coder();
+  $querystate = new XHRResponse();
+  $coderManager = new CoderManager($bdd);
 
-  //Hydrating coder object
-  $coder->HydrateForDBQueries($name, $phone_number, $country, $sex);
+  // Extraction of received datas
+  $response = json_decode(stripslashes(file_get_contents("php://input")));
 
-  // Inserting to DB
-  $coderManager->Add($coder);
+  if ($response != NULL) {
+    $querystate->_message = $response;
 
-  // Query state
-  if ($coderManager) {
-      $insertedid = (int) ($bdd->lastInsertId());
-      $querystate->ReturnSuccess($insertedid);
+    $name = $response->name;
+    $sex = $response->sex;
+    $country = $response->country;
+    $phone_number = $response->phone_number;
+
+    // Hydrating coder object
+    $coder->HydrateWithoutId($name, $phone_number, $sex, $country);
+
+    // Inserting coder to database
+    $coderManager->Add($coder);
+    
+    // When insertion succed
+    if ($coderManager) {
+      $querystate->_success = TRUE;
+      $querystate->_data = null;
+      $querystate->_message = 'Successfully saved to database';
+    }
+    else {
+      $querystate->_success = FALSE;
+      $querystate->_data = null;
+      $querystate->_message = 'Failed to save to database';
+    }
   }
-  else { $querystate->ReturnFailure(); }
-}
+  else {
+    $querystate->_success = TRUE;
+    $querystate->_data = 'Error';
+    $querystate->_message = 'Missing data';
+  }
 
-else {
-  echo 'Some data is missing';
-}
+  echo json_encode($querystate);
