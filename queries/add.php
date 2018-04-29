@@ -26,7 +26,7 @@
     // Inserting coder to database
     $coderManager->Add($coder);
     
-    // When insertion succed
+    // When insertion succeed
     if ($coderManager) {
       $querystate->_success = TRUE;
       $querystate->_data = null;
